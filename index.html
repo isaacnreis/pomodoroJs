@@ -1,22 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Timer Pomodoro</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Pomo Time</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/tomato.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <section id="timer">
-      <h1 id="timer-min" class="timer-element"></h1>
-      <h1 class="timer-element">:</h1>
-      <h1 id="timer-secs" class="timer-element"></h1>
+    <section id="header">
+      <div class="top-element">
+        <h1 class="header-logo">
+          <img src="./assets/images/tomato.svg" alt="Logo tomate" />
+          POMO TIME
+        </h1>
+        <div class="header-buttons">
+          <button id="btn-pomodoroMode" class="btn-element">POMODORO</button>
+          <button id="btn-configMode" class="btn-element">
+            <img class="icone-btn" src="./assets/images/configuration.svg" />
+          </button>
+        </div>
+      </div>
     </section>
-    <section id="buttons">
-      <button id="btn-play" class="btn-element">Play</button>
-      <button id="btn-pause" class="btn-element">Pause</button>
-      <button id="btn-reset" class="btn-element">Reset</button>
+    <section id="top-container">
+      <section class="music-player">
+        <button id="play-button" class="play-button">
+          <span class="play-icon">&#9658;</span>
+          <span class="pause-icon">&#10074;&#10074;</span>
+        </button>
+        <span>Música</span>
+        <audio
+          id="audio"
+          loop
+          src="./assets/audio/free-lofi-type-beat-retro-dreams-209512.mp3"
+        ></audio>
+      </section>
+      <section id="timer" class="top-element">
+        <h1 id="timer-min" class="timer-element"></h1>
+        <h1 class="timer-element">:</h1>
+        <h1 id="timer-secs" class="timer-element"></h1>
+      </section>
+      <section id="buttons-container" class="top-element">
+        <div class="btn-element">
+          <img class="icone-btn" src="./assets/images/play.svg" />
+          <button id="btn-play">Iniciar</button>
+        </div>
+        <div class="btn-element">
+          <img class="icone-btn" src="./assets/images/pause.svg" />
+          <button id="btn-pause">Pausar</button>
+        </div>
+        <div class="btn-element">
+          <img class="icone-btn" src="./assets/images/reset.svg" />
+          <button id="btn-reset">Resetar</button>
+        </div>
+      </section>
     </section>
-    <script src="./script.js"></script>
+    <section id="settings" class="hide">
+      <div class="settings-container">
+        <h2>Configurações</h2>
+        <div class="setting-container">
+          <h3>Tema</h3>
+          <ul class="options-setting-list">
+            <li>
+              <button
+                class="btn-element color-button btn-active"
+                data-color="#69a98b"
+              >
+                Verde
+              </button>
+            </li>
+            <li>
+              <button class="btn-element color-button" data-color="#E5A441">
+                Amarelo
+              </button>
+            </li>
+            <li>
+              <button class="btn-element color-button" data-color="#CB2A37">
+                Vermelho
+              </button>
+            </li>
+            <li>
+              <button class="btn-element color-button" data-color="#137195">
+                Azul
+              </button>
+            </li>
+            <li>
+              <button class="btn-element color-button" data-color="#A161E2">
+                Roxo
+              </button>
+            </li>
+          </ul>
+        </div>
+        <h2>Áudios</h2>
+        <div>
+          <div class="setting-container">
+            <h3>Reproduzir som ao finalizar tempo</h3>
+            <select class="btn-element" id="playFinishSom" name="playFinishSom">
+              <option value="yes">Sim</option>
+              <option value="no">Não</option>
+            </select>
+          </div>
+          <div class="setting-container">
+            <h3>Tocar sons ao interagir com os botões</h3>
+            <select
+              class="btn-element"
+              id="playSomButtons"
+              name="playSomButtons"
+            >
+              <option value="yes">Sim</option>
+              <option value="no">Não</option>
+            </select>
+          </div>
+          <div class="setting-container">
+            <h3>Tocar música</h3>
+            <select class="btn-element" id="playMusic" name="playMusic">
+              <option value="yes">Sim</option>
+              <option value="no">Não</option>
+            </select>
+          </div>
+        </div>
+        <div class="rodape-settings">
+          <span>2024 © Isaac N. Reis - </span>
+          <a
+            href="https://github.com/isaacnreis"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Github</a
+          >
+        </div>
+      </div>
+    </section>
+    <script src="./assets/script/script.js"></script>
   </body>
 </html>
